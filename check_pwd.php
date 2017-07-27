@@ -25,7 +25,7 @@ if(!password_verify($password, $result['user_pwd'])){
 
 $_SESSION['id'] = $result['user_id'];
 $_SESSION['username'] = $result['user_name'];
-$_SESSION['new'] = false;
+$_SESSION['new_user'] = false;
 
 header('Location: index.php');
 exit();

@@ -14,16 +14,33 @@
   <a class="logout" href="event_control.php">Enter Event Control</a>
   <?php } ?>
 
+  <!--join an event-->
+  <a class="logout" href="event_join.php">Join an Event</a>
+
   <!--create event-->
   <a class="logout" href="event_create.php">Create an Event</a><br>
 
   <!--user info-->
   <?php
-  if(!$_SESSION['new']){
+  if(!$_SESSION['new_user']){
     echo "<br />Welcome back, ".$_SESSION['username'];
   }
   else{
-    echo "<br />Welcome, ".$_SESSION['username'].". Create an event to get started.";
+    echo "<br />Welcome. Create an event to get started.";
+  }
+
+  #checks if user just created a new event
+  if(isset($_SESSION['new_event'])){
+    if($_SESSION['new_event']){
+      echo "<br />Event successfully created! Enter Event Control for event modifications.";
+      $_SESSION['new_event'] = false;
+    }
+    else {
+      #nothing
+    }
+  }
+  else {
+    #nothing
   }
   ?>
 </div>

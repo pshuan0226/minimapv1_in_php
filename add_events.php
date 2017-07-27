@@ -19,8 +19,9 @@ if(($event_pwd != $event_pwd_c) || $event_pwd == ""){
 }
 
 //creator check
-if($event_creator == "" || $stmt->rowCount() == 0){
+if($event_creator != $_SESSION['username']){
   echo "Creator incorrect <br />";
+  echo $_SESSION['username'];
   echo "<a href=\"main.php\">Back</a>";
   goto end;
 }
@@ -53,6 +54,7 @@ $stmt->execute(array(":ename" => $event_name));
 $result2 = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $_SESSION['e_id'] = $result2['event_id'];
+$_SESSION['new_event'] = true;
 
 header('Location: main.php');
 exit();

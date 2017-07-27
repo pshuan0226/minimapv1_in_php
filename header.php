@@ -8,13 +8,14 @@
    .container{
      margin: 0 auto;
      width: 600px;
+     text-align: center;
    }
    .box{
      margin: 0 auto;
      padding: 20px;
    }
    form{
-     text-align: left;
+     text-align: center;
      width: 500px;
      margin: 0 auto;
    }
@@ -39,11 +40,30 @@
      border-radius: 3px;
      padding: 2px;
    }
+   #short_hr{
+     width: 50%;
+   }
    #map{
+    margin: auto;
     width: 500px;
     height: 400px;
    }
+   .list{
+     text-align: left;
+     margin: 0 auto;
+     width: 300px;
+   }
    .logout{
+     padding: 4px;
+     border: 1px solid cadetblue;
+     border-radius: 5px;
+     text-decoration: none;
+     background-color: cadetblue;
+     color: white;
+     font-size: 12pt;
+     font-family: sans-serif;
+   }
+   .join{
      padding: 3px;
      border: 1px solid cadetblue;
      border-radius: 5px;
@@ -52,6 +72,8 @@
      color: white;
      font-size: 12pt;
      font-family: sans-serif;
+     position: absolute;
+     float: right;
    }
    .logout:hover{
      border-color: lightblue;

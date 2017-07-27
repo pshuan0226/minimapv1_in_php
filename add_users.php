@@ -35,7 +35,8 @@
     ":ulong" => $longitude
   ));
 
-  $_SESSION['new'] = true;
+  $_SESSION['new_user'] = true;
+  $_SESSION['username'] = $result['user_name'];
 
   header('Location: main.php');
   exit();

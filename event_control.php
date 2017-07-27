@@ -18,8 +18,12 @@ $stmt = $db->prepare("SELECT member_name FROM event_members WHERE event_id=:evid
 $stmt->execute(array(
   ":evid" => $_SESSION['e_id']
 ));
-$result = $stmt->fetch(PDO::FETCH_COLUMN);
-print_r($result);
+$result = $stmt->fetchALL();
+$size = $stmt->rowCount();
+while($size > 0){
+  echo $result[$size - 1]['member_name']."<br><hr>";
+  $size--;
+}
 ?>
 
 </div>

@@ -18,6 +18,20 @@ if($stmt->rowCount() == 0){
   goto end;
 }
 
+//check repeated member
+$stmt = $db->prepare("SELECT * FROM event_members WHERE member_name=:mem AND event_id=:eid");
+$stmt->execute(array(
+  ":mem"=> $new_emember,
+  ":eid"=> $_SESSION['e_id']
+));
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+if($new_emember == $result['member_name']){
+  echo "member already exists.<br />";
+  echo "<a href=\"event_control.php\">back</a>";
+  goto end;
+}
+
+
 //add member into member list
 $stmt = $db->prepare("INSERT INTO `event_members` (
   `member_name`, `event_id`)
@@ -27,7 +41,7 @@ $stmt->execute(array(
   ":eid" => $_SESSION['e_id']
 ));
 
-header('Location: main.php');
+header('Location: event_control.php');
 exit();
 end:
  ?>
