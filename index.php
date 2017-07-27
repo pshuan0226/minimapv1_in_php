@@ -1,5 +1,4 @@
 <?php
-//學員姓名:黃湘湘
 
 include "header.php";
 if(isset($_SESSION['id'])){

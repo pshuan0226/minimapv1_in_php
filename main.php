@@ -14,16 +14,18 @@
   <a class="logout" href="event_control.php">Enter Event Control</a>
   <?php } ?>
 
-
   <!--create event-->
-  <form action="add_events.php" method="POST">
-    ----------------------------------- <br />
-    Event creator (Enter your username): <input type="text" name="event_creator" required/><br />
-    Event name: <input type="text" name="event_name" required/><br />
-    Event password: <input type="password" name="event_pwd" required/><br />
-    Event password check: <input type="password" name="event_pwd_c" required/><br /><br />
-    <input class="logout" type="submit" value="Create an Event" />
-  </form>
+  <a class="logout" href="event_create.php">Create an Event</a><br>
+
+  <!--user info-->
+  <?php
+  if(!$_SESSION['new']){
+    echo "<br />Welcome back, ".$_SESSION['username'];
+  }
+  else{
+    echo "<br />Welcome, ".$_SESSION['username'].". Create an event to get started.";
+  }
+  ?>
 </div>
 
 

@@ -15,6 +15,8 @@
    }
    form{
      text-align: left;
+     width: 500px;
+     margin: 0 auto;
    }
    body{
      font-size: 14pt;
@@ -24,6 +26,18 @@
      height: 100%;
      margin: 0;
      padding: 0;
+   }
+   input[type=text]{
+     width: 120px;
+     border: 1px solid cadetblue;
+     border-radius: 3px;
+     padding: 2px;
+   }
+   input[type=password]{
+     width: 120px;
+     border: 1px solid cadetblue;
+     border-radius: 3px;
+     padding: 2px;
    }
    #map{
     width: 500px;

@@ -35,6 +35,7 @@
     ":ulong" => $longitude
   ));
 
+  $_SESSION['new'] = true;
 
   header('Location: main.php');
   exit();
